@@ -4,10 +4,12 @@
 Module containing the method canUnlockAll.
 """
 
+
 def canUnlockAll(boxes: list) -> bool:
     """
     Determine if all boxes can be open.
-    Each box contains a list of zero or more integers, each representing a key (the index of the box it opens).
+    Each box contains a list of zero or more integers,
+    each representing a key (the index of the box it opens).
     First box is always unlocked.
     """
     openable = [False for _ in boxes]
