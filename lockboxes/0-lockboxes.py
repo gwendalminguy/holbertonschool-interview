@@ -19,7 +19,7 @@ def canUnlockAll(boxes: list) -> bool:
         for key in keys[found - newly_found:]:                  # For each new key found.
             newly_found = 0                                     # Reset number of newly found keys.
             for new in boxes[key]:                              # For each new key found in the box newly opened box.
-                if new not in keys and new <= len(boxes):       # Add each key only if not already in keys and if it opens an actual box.
+                if new not in keys and new < len(boxes):       # Add each key only if not already in keys and if it opens an actual box.
                     keys.extend(boxes[key])
                     newly_found += 1
                     found += 1
