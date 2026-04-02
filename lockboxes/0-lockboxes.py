@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 0-lockboxes.py
 Module containing the method canUnlockAll.
