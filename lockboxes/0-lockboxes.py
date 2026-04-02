@@ -16,7 +16,7 @@ def canUnlockAll(boxes: list) -> bool:
     keys = [0]
 
     for _ in boxes:                                             # For as many times as there are boxes.
-        for key in keys[found - 1:]:                            # For each new key found.
+        for key in keys[found - newly_found:]:                  # For each new key found.
             newly_found = 0                                     # Reset number of newly found keys.
             for new in boxes[key]:                              # For each new key found in the box newly opened box.
                 if new not in keys and new <= len(boxes):       # Add each key only if not already in keys and if it opens an actual box.
