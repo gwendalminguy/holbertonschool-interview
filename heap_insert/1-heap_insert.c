@@ -16,19 +16,24 @@ heap_t *heap_insert(heap_t **root, int value)
 	heap_t *parent;
 
 	new = malloc(sizeof(heap_t));
+
 	if (new == NULL)
 		return (NULL);
+
 	new->n = value;
 	new->parent = NULL;
 	new->left = NULL;
 	new->right = NULL;
+
 	/* Finding new node inserting position */
 	parent = find_position(root);
+
 	if (!parent)
 	{
 		*root = new;
 		return (new);
 	}
+
 	/* Inserting new node */
 	if (!parent->left)
 	{
@@ -40,17 +45,20 @@ heap_t *heap_insert(heap_t **root, int value)
 		parent->right = new;
 		new->parent = parent;
 	}
+
 	/* Swapping new node's value with its parent's while necessary */
 	while (parent->n < new->n)
 	{
 		new = swap_values(parent, new);
 		parent = new->parent;
+
 		if (!parent)
 		{
 			*root = new;
 			break;
 		}
 	}
+
 	return (new);
 }
 
@@ -70,10 +78,12 @@ heap_t *find_position(heap_t **root)
 		return (NULL);
 
 	parents[0] = *root;
+
 	while (true)
 	{
 		i = 0;
 		j = 0;
+
 		/* Collecting children until NULL is found */
 		while (parents[i])
 		{
@@ -84,6 +94,7 @@ heap_t *find_position(heap_t **root)
 			}
 			else
 				return (parents[i]);
+
 			if (parents[i]->right)
 			{
 				children[j] = parents[i]->right;
@@ -91,15 +102,19 @@ heap_t *find_position(heap_t **root)
 			}
 			else
 				return (parents[i]);
+
 			i++;
 		}
+
 		i = 0;
+
 		/* Switching children to parents */
 		while (children[i])
 		{
 			parents[i] = children[i];
 			i++;
 		}
+
 		parents[i] = NULL;
 	}
 }
