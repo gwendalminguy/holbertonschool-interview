@@ -120,7 +120,7 @@ heap_t *find_position(heap_t **root)
 }
 
 /**
- * swap_up - swap a node's value with its parent's
+ * swap_values - swap a node's value with its parent's
  * @parent: pointer to the parent node
  * @child: pointer to the child node
  *
