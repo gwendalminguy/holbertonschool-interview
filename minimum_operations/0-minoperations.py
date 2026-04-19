@@ -4,7 +4,7 @@
 Module containing the method minOperations.
 """
 
-def minOperations(n):
+def minOperations(n: int) -> int:
     """
     Determine minimum operations to reach n.
     Only operations available are COPY ALL and PASTE.
