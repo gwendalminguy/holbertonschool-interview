@@ -68,6 +68,7 @@ void update_sandpiles(int grid1[3][3])
 		{0, 0, 0}
 	};
 
+	/* Transferring unstable piles to a temporary grid */
 	for (i = 0 ; i < 3 ; i++)
 	{
 		for (j = 0 ; j < 3 ; j++)
@@ -80,6 +81,7 @@ void update_sandpiles(int grid1[3][3])
 		}
 	}
 
+	/* Spilling temporary grid back into the right piles */
 	for (i = 0 ; i < 3 ; i++)
 	{
 		for (j = 0 ; j < 3 ; j++)
