@@ -57,6 +57,9 @@ def main():
 
 
 def log(total_size, statuses):
+    """
+    Helper function to log statistics.
+    """
     print(f"File size: {total_size}")
 
     for code, value in statuses.items():
