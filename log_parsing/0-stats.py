@@ -56,7 +56,7 @@ def main():
     except KeyboardInterrupt:
         log(total_size, statuses)
     else:
-        if (i + 1) % 10 == 0:
+        if (i + 1) % 10 == 0 or i < 10:
             log(total_size, statuses)
 
 
