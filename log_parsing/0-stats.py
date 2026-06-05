@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
 0-stats.py
-Module containing stats and log functions.
+Script monitoring server activity.
 """
 
 import re
 import sys
 
 
-def stats():
+def main():
     """
     Log statistics every ten calls on a server.
     Compute total size transfered and count of eache status code.
@@ -51,6 +51,9 @@ def stats():
             i += 1
     except KeyboardInterrupt:
         log(total_size, statuses)
+    else:
+        if i % 10 != 0:
+            log(total_size, statuses)
 
 
 def log(total_size, statuses):
@@ -62,4 +65,4 @@ def log(total_size, statuses):
 
 
 if __name__ == "__main__":
-    stats()
+    main()
