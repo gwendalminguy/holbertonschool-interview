@@ -13,7 +13,11 @@ def main():
     Log statistics every ten calls on a server.
     Compute total size transfered and count of eache status code.
     """
-    pattern = re.compile(r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} - \[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d+\] \"GET /projects/260 HTTP/1.1\" \d{3} \d+$")
+    pattern = re.compile(
+        r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} - "
+        r"\[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d+\] "
+        r"\"GET /projects/260 HTTP/1.1\" \d{3} \d+$"
+    )
 
     statuses = {
         "200": 0,
