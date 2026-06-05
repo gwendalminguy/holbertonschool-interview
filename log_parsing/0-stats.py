@@ -30,7 +30,7 @@ def main():
         "500": 0,
     }
 
-    i = 0
+    i = 1
     total_size = 0
 
     try:
@@ -49,14 +49,14 @@ def main():
             total_size += file_size
 
             # Printing statistics
-            if (i + 1) % 10 == 0:
+            if i % 10 == 0:
                 log(total_size, statuses)
 
             i += 1
     except KeyboardInterrupt:
         log(total_size, statuses)
     else:
-        if (i + 1) % 10 == 0 or i < 10:
+        if i % 10 != 0:
             log(total_size, statuses)
 
 
