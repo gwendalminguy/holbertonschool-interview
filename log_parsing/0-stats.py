@@ -38,7 +38,6 @@ def main():
         for line in sys.stdin:
             # Validating format
             if not pattern.match(line):
-                i += 1
                 pass
 
             # Splitting and analyzing data
