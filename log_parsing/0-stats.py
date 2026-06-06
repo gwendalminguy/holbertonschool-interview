@@ -38,7 +38,7 @@ def main():
         for line in sys.stdin:
             # Validating format
             if not pattern.match(line):
-                pass
+                continue
 
             i += 1
 
