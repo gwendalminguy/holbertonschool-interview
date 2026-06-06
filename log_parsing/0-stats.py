@@ -53,14 +53,12 @@ def main():
 
             # Printing statistics
             if i % 10 == 0:
-                print(i)
                 log(total_size, statuses)
 
     except KeyboardInterrupt:
         log(total_size, statuses)
     else:
         if i % 10 != 0:
-            print(i)
             log(total_size, statuses)
 
 
