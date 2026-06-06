@@ -45,11 +45,8 @@ def main():
             # Splitting and analyzing data
             data = line.split(" ")
 
-            status_code = data[-2]
-            statuses[status_code] += 1
-
-            file_size = int(data[-1])
-            total_size += file_size
+            statuses[data[-2]] += 1
+            total_size += int(data[-1])
 
             # Printing statistics
             if i % 10 == 0:
