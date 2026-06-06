@@ -16,7 +16,7 @@ def main():
     pattern = re.compile(
         r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} - '
         r'\[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d+\] '
-        r'"(?:GET|POST) /projects/\d{1,3} HTTP/1\.1" '
+        r'"(?:GET|POST|PATCH|PUT|DELETE) /projects/\d{1,3} HTTP/1\.1" '
         r'(?:200|301|400|401|403|404|405|500) \d+$'
     )
 
