@@ -31,7 +31,7 @@ def main():
         "500": 0,
     }
 
-    i = 1
+    i = 0
     total_size = 0
 
     try:
@@ -39,6 +39,8 @@ def main():
             # Validating format
             if not pattern.match(line):
                 pass
+
+            i += 1
 
             # Splitting and analyzing data
             data = line.split(" ")
@@ -51,13 +53,14 @@ def main():
 
             # Printing statistics
             if i % 10 == 0:
+                print(i)
                 log(total_size, statuses)
 
-            i += 1
     except KeyboardInterrupt:
         log(total_size, statuses)
     else:
         if i % 10 != 0:
+            print(i)
             log(total_size, statuses)
 
 
