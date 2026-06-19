@@ -22,7 +22,7 @@ int is_palindrome(unsigned long n)
         first = (n / div) % 10;
         last = (n % mod) / raise(10, shift -1);
 
-        printf("First: %i ; Last: %i\n\n", first, last);
+        /* printf("First: %i ; Last: %i\n\n", first, last); */
 
         /* Comparing them */
         if (first != last)
