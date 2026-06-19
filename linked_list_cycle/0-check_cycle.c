@@ -1,7 +1,5 @@
 #include "lists.h"
 
-int is_seen(listint_t **array, listint_t *node);
-
 /**
  * check_cycle - checks wether a linked list contains a cycle or not
  * @list: linked list to check
