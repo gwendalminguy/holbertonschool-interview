@@ -43,6 +43,8 @@ def validUTF8(data: list[int]) -> bool:
 
         continue
 
+    return True
+
 
 def check_continuation_bytes(data: list[int], i: int, n: int) -> bool:
     """
