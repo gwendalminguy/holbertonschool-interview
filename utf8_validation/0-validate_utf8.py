@@ -18,29 +18,38 @@ def validUTF8(data: list[int]) -> bool:
     i = 0
 
     while True:
+        # End of list reached
         if i >= len(data):
             return True
 
-        if data[i] >= 256:
-            return False
+        # Keeping 8 least significant bits only
+        byte = data[i] & 0b11111111
 
-        elif data[i] >= 240:
-            if not check_continuation_bytes(data, i + 1, 3):
-                return False
-            i += 4
+        # ASCII
+        if byte & 0b10000000 == 0b00000000:
+            i += 1
+            continue
 
-        elif data[i] >= 224:
-            if not check_continuation_bytes(data, i + 1, 2):
-                return False
-            i += 3
-
-        elif data[i] >= 192:
+        # Multi Byte (Continuation Bytes: 1)
+        elif byte & 0b11100000 == 0b11000000:
             if not check_continuation_bytes(data, i + 1, 1):
                 return False
             i += 2
 
+        # Multi Byte (Continuation Bytes: 2)
+        elif byte & 0b11110000 == 0b11100000:
+            if not check_continuation_bytes(data, i + 1, 2):
+                return False
+            i += 3
+
+        # Multi Byte (Continuation Bytes: 3)
+        if byte & 0b11111000 == 0b11110000:
+            if not check_continuation_bytes(data, i + 1, 3):
+                return False
+            i += 4
+
         else:
-            i += 1
+            return False
 
         continue
 
@@ -53,7 +62,11 @@ def check_continuation_bytes(data: list[int], i: int, n: int) -> bool:
     for j in range(n):
         if i + j >= len(data):
             return False
-        if data[i + j] < 128 or data[i + j] >= 192:
+
+        # Keeping 8 least significant bits only
+        byte = data[i + j] & 0b11111111
+
+        if byte & 0b11000000 != 0b11000000:
             return False
 
     return True
