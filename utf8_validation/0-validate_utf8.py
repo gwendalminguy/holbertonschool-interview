@@ -5,23 +5,13 @@ Module containing the method validUTF8.
 """
 
 
-BYTE_TYPE = {
-    "240": 4,
-    "224": 3,
-    "192": 2
-}
-
 def validUTF8(data: list[int]) -> bool:
     """
     Checks if a sequence of bytes is a valid UTF-8 encoding.
     """
     i = 0
 
-    while True:
-        # End of list reached
-        if i >= len(data):
-            return True
-
+    while i < len(data):
         # Keeping 8 least significant bits only
         byte = data[i] & 0b11111111
 
@@ -43,7 +33,7 @@ def validUTF8(data: list[int]) -> bool:
             i += 3
 
         # Multi Byte (Continuation Bytes: 3)
-        if byte & 0b11111000 == 0b11110000:
+        elif byte & 0b11111000 == 0b11110000:
             if not check_continuation_bytes(data, i + 1, 3):
                 return False
             i += 4
@@ -66,7 +56,7 @@ def check_continuation_bytes(data: list[int], i: int, n: int) -> bool:
         # Keeping 8 least significant bits only
         byte = data[i + j] & 0b11111111
 
-        if byte & 0b11000000 != 0b11000000:
+        if byte & 0b11000000 != 0b10000000:
             return False
 
     return True
