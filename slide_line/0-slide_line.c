@@ -6,6 +6,8 @@
  * @line: array of integers
  * @size: size of array
  * @direction: direction to slide
+ *
+ * Return: 1 on success ; 0 otherwise
  */
 int slide_line(int *line, size_t size, int direction)
 {
@@ -41,6 +43,9 @@ int slide_line(int *line, size_t size, int direction)
 		}
 	}
 
+	if (direction > 0)
+		reverse(line, length);
+
 	return (1);
 }
 
@@ -70,7 +75,7 @@ void reverse(int *line, int size)
  * @i: final position
  * @j: initial position
  *
- * Returns: always 0
+ * Return: always 0
  */
 int merge(int *line, int i, int j)
 {
