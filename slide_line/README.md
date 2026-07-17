@@ -1,6 +1,6 @@
 ## Slide Line (2048)
 
-This project is about working on single line version of the **2048** game.
+This project is about working on single line version of the [2048](https://en.wikipedia.org/wiki/2048_(video_game)) game.
 
 * [slide_line.h](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/slide_line/slide_line.h), the header file containing all prototypes.
 
