@@ -12,14 +12,14 @@ This repository focuses on algorithms implementation for technical interview tra
 
 * [Sandpiles](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/sandpiles), an algorithm to sum two sandpiles, in C.
 
-* [Linked List Palindrome](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/linked_list_palindrome), an algorithm to determine wether a linked list is a palindrome or not.
+* [Linked List Palindrome](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/linked_list_palindrome), a function to determine wether a linked list is a palindrome or not, in C.
 
-* [Log Parsing](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/log_parsing), an algorithm to parse logs for server monitoring.
+* [Log Parsing](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/log_parsing), an algorithm to parse logs for server monitoring, in Python.
 
-* [Linked List Cycle](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/linked_list_cycle), an algorithm to determine wether a linked list contains a cycle or not.
+* [Linked List Cycle](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/linked_list_cycle), a function to determine wether a linked list contains a cycle or not, in C.
 
-* [Palindrome Integer](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/palindrome_integer), an algorithm to determine wether an integer is a palindrome or not.
+* [Palindrome Integer](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/palindrome_integer), a function to determine wether an integer is a palindrome or not, in C.
 
-* [UTF-8 Validation](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/utf8_validation), an algorithm to determine wether a sequence of bytes is a valid UTF-8 encoding or not.
+* [UTF-8 Validation](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/utf8_validation), an algorithm to determine wether a sequence of bytes is a valid UTF-8 encoding or not, in Python.
 
-* [Slide Line (2048)](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/slide_line), an algorithm to reproduce the basic system of the 2048 famous game.
+* [Slide Line (2048)](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/slide_line), an algorithm to reproduce the basic system of the 2048 famous game, in C.
