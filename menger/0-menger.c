@@ -44,9 +44,10 @@ bool is_blank(int i, int j, int level)
 		upper = lower * 2 - 1;
 
 		/* Check if cell is in the center of its level */
-		if (((i % modulo) >= lower && (i % modulo) <= upper) && ((j % modulo) >= lower && (j % modulo) <= upper))
-			return true;
+		if (((i % modulo) >= lower && (i % modulo) <= upper)
+			&& ((j % modulo) >= lower && (j % modulo) <= upper))
+			return (true);
 	}
 
-	return false;
+	return (false);
 }
