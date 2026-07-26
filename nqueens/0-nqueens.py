@@ -31,10 +31,10 @@ def main():
 
     backtrack([], n, allowed, solutions, 0)
 
-    for solution in solutions:
-        print(solution)
+    # for solution in solutions:
+        # print(solution)
 
-    # print(len(solutions))
+    print(f"\nTotal: {len(solutions)} solutions")
 
 
 def print_board(
@@ -42,9 +42,11 @@ def print_board(
     size: int
 ) -> None:
     """
-    Print the state of the board.
+    Print a visually understandable representation of a given state of the board.
     """
     board = [[0 for cell in range(size)] for row in range(size)]
+
+    print()
 
     for i, j in state:
         board[i][j] = 1
@@ -52,7 +54,7 @@ def print_board(
     for row in board:
         print(row)
 
-    print("\n")
+    print()
 
 
 def invalidate(
@@ -131,6 +133,7 @@ def backtrack(
     if is_complete(state, size):
         solutions.append([row for row in state])
         # print_board(state, size)
+        print(state)
         return
 
     i = line
