@@ -20,8 +20,10 @@ This repository focuses on algorithms implementation for technical interview tra
 
 * [Palindrome Integer](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/palindrome_integer), a function to determine wether an integer is a palindrome or not, in C.
 
-* [UTF-8 Validation](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/utf8_validation), an algorithm to determine wether a sequence of bytes is a valid UTF-8 encoding or not, in Python.
+* [UTF-8 Validation](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/utf8_validation), an algorithm to determine wether a sequence of bytes is a valid [UTF-8](https://en.wikipedia.org/wiki/UTF-8) encoding or not, in Python.
 
-* [Slide Line (2048)](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/slide_line), an algorithm to reproduce the basic system of the 2048 famous game, in C.
+* [Slide Line (2048)](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/slide_line), an algorithm to reproduce the basic system of the [2048](https://en.wikipedia.org/wiki/2048_(video_game)) famous game, in C.
 
-* [Menger Sponge](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/menger), an algorithm to print a Menger Sponge of a given level, in C.
+* [Menger Sponge](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/menger), an algorithm to print a [Menger Sponge](https://en.wikipedia.org/wiki/Menger_sponge) of a given level, in C.
+
+* [N Queens](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/nqueens), an algorithm to find all solutions for the [N Queens](https://en.wikipedia.org/wiki/Eight_queens_puzzle) problem, in Python.
