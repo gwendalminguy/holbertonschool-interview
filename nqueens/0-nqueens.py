@@ -37,7 +37,10 @@ def main():
     # print(len(solutions))
 
 
-def print_board(state: list[list], size: int) -> None:
+def print_board(
+    state: list[list],
+    size: int
+) -> None:
     """
     Print the state of the board.
     """
@@ -52,7 +55,11 @@ def print_board(state: list[list], size: int) -> None:
     print("\n")
 
 
-def invalidate(allowed: list[int], coordinates: list[int], size: int) -> list[list]:
+def invalidate(
+    allowed: list[int],
+    coordinates: list[int],
+    size: int
+) -> list[list]:
     """
     Invalidate forbidden positions based on the coordinates of the new queen.
     """
@@ -71,7 +78,7 @@ def invalidate(allowed: list[int], coordinates: list[int], size: int) -> list[li
     while check_i > 0 and check_j > 0:
         check_i -= 1
         check_j -= 1
-    
+
     # Invalidating diagonal A
     while check_i < size and check_j < size:
         new_allowed[check_i][check_j] = 0
@@ -95,7 +102,10 @@ def invalidate(allowed: list[int], coordinates: list[int], size: int) -> list[li
     return new_allowed
 
 
-def is_complete(state: list[list], size: int) -> bool:
+def is_complete(
+    state: list[list],
+    size: int
+) -> bool:
     """
     Check if all queens are placed on the board.
     """
@@ -105,7 +115,13 @@ def is_complete(state: list[list], size: int) -> bool:
     return False
 
 
-def backtrack(state: list[list], size: int, allowed: list[list], solutions: list[list], line: int) -> None:
+def backtrack(
+    state: list[list],
+    size: int,
+    allowed: list[list],
+    solutions: list[list],
+    line: int
+) -> None:
     """
     Explore every potential solution recursively.
     Each recursion level explores every possible
