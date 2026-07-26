@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 0-nqueens.py
-Script finding a solution for the N Queens problem.
+Script finding all solutions for the N Queens problem.
 """
 
 import sys
