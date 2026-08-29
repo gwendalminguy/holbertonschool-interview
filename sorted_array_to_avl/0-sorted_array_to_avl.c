@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "binary_trees.h"
 
 /**
@@ -27,7 +28,7 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 	root->left = NULL;
 	root->right = NULL;
 
-	node = split_insert(root, array, size);
+	node = split_insert(root, array, size, true);
 
 	if (!node)
 		return (NULL);
@@ -39,15 +40,16 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
  * insert_node - inserts a node in a binary tree
  * @root: pointer to the root node
  * @x: value to insert
+ * @first: first call
  *
  * Return: pointer to the inserted node
  */
-avl_t *insert_node(binary_tree_t *root, int x)
+avl_t *insert_node(binary_tree_t *root, int x, bool first)
 {
 	binary_tree_t *parent, *child;
 
 	/* Root case */
-	if (!root->n)
+	if (first)
 	{
 		root->n = x;
 		return (root);
@@ -89,10 +91,11 @@ avl_t *insert_node(binary_tree_t *root, int x)
  * @root: pointer to the root node
  * @array: full array
  * @size: size of the array
+ * @first: first call
  *
  * Return: pointer to the root node
  */
-avl_t *split_insert(binary_tree_t *root, int *array, size_t size)
+avl_t *split_insert(binary_tree_t *root, int *array, size_t size, bool first)
 {
 	avl_t *node, *verification;
 	int size_left = (size - 1) / 2;
@@ -104,7 +107,7 @@ avl_t *split_insert(binary_tree_t *root, int *array, size_t size)
 
 	if (size == 1)
 	{
-		node = insert_node(root, array[0]);
+		node = insert_node(root, array[0], first);
 
 		if (!node)
 			return (NULL);
@@ -113,21 +116,21 @@ avl_t *split_insert(binary_tree_t *root, int *array, size_t size)
 	}
 
 	center_value = array[size_left];
-	node = insert_node(root, center_value);
+	node = insert_node(root, center_value, first);
 
 	if (!node)
 		return (NULL);
 
 	if (size_left)
 	{
-		verification = split_insert(root, array, size_left);
+		verification = split_insert(root, array, size_left, false);
 		if (!verification)
 			return (NULL);
 	}
 
 	if (size_right)
 	{
-		verification = split_insert(root, &array[size_left + 1], size_right);
+		verification = split_insert(root, &array[size_left + 1], size_right, false);
 		if (!verification)
 			return (NULL);
 	}

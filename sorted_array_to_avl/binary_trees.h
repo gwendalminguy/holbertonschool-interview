@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
 #ifndef BINARY_TREES_H
 #define BINARY_TREES_H
 
@@ -23,8 +27,8 @@ typedef struct binary_tree_s avl_t;
 
 void binary_tree_print(const binary_tree_t *tree);
 
-avl_t *split_insert(binary_tree_t *root, int *array, size_t size);
-avl_t *insert_node(binary_tree_t *root, int x);
+avl_t *split_insert(binary_tree_t *root, int *array, size_t size, bool first);
+avl_t *insert_node(binary_tree_t *root, int x, bool first);
 avl_t *sorted_array_to_avl(int *array, size_t size);
 
 #endif /* BINARY_TREES_H */
