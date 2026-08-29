@@ -19,6 +19,11 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 	if (!root)
 		return (NULL);
 
+	root->n = 0;
+	root->parent = NULL;
+	root->left = NULL;
+	root->right = NULL;
+
 	node = split_insert(root, array, size);
 
 	if (!node)
@@ -53,6 +58,8 @@ avl_t *insert_node(binary_tree_t *root, int x)
 		return (NULL);
 
 	child->n = x;
+	child->left = NULL;
+	child->right = NULL;
 
 	/* Find position of parent to insert value for the child */
 	while ((x < parent->n && parent->left) || (x > parent->n && parent->right))
@@ -85,8 +92,8 @@ avl_t *insert_node(binary_tree_t *root, int x)
 avl_t *split_insert(binary_tree_t *root, int *array, size_t size)
 {
 	avl_t *node, *verification;
-	int size_right = (size - 1) / 2;
-	int size_left = (size - 1) - size_right;
+	int size_left = (size - 1) / 2;
+	int size_right = (size - 1) - size_left;
 	int center_value;
 
 	if (!size)
