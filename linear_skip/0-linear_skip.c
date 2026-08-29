@@ -28,7 +28,7 @@ skiplist_t *linear_skip(skiplist_t *head, int value)
 		if (current)
 			printf("Value checked at index [%li] = [%i]\n", current->index, current->n);
 
-		if (current->n > value)
+		if (current->n >= value)
 		{
 			upper = current->index;
 
