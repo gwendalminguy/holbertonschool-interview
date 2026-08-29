@@ -11,15 +11,11 @@
 skiplist_t *linear_skip(skiplist_t *head, int value)
 {
 	size_t upper;
-	skiplist_t *current, *last;
+	skiplist_t *current = head, *last = head;
 
 	if (!head)
 		return (NULL);
 
-	last = head;
-	current = head;
-
-	/* First search through express lane */
 	while (current)
 	{
 		last = current;
@@ -32,17 +28,17 @@ skiplist_t *linear_skip(skiplist_t *head, int value)
 			if (current->n >= value)
 			{
 				upper = current->index;
+
+				printf("Value found between indexes ");
+				printf("[%li] and [%li]\n", last->index, current->index);
+
 				break;
 			}
 		}
 	}
 
-	printf("Value found between indexes ");
-	printf("[%li] and [%li]\n", last->index, current->index);
-
 	current = last;
 
-	/* Second search through normal lane */
 	while (current && current->index <= upper)
 	{
 		printf("Value checked at index [%li] = [%i]\n", current->index, current->n);
