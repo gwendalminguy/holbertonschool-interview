@@ -11,20 +11,20 @@
  */
 avl_t *sorted_array_to_avl(int *array, size_t size)
 {
-    binary_tree_t *root;
-    binary_tree_t *node;
+	binary_tree_t *root;
+	binary_tree_t *node;
 
-    root = malloc(sizeof(binary_tree_t));
+	root = malloc(sizeof(binary_tree_t));
 
-    if (!root)
-        return NULL;
+	if (!root)
+		return (NULL);
 
-    node = split_insert(root, array, size);
+	node = split_insert(root, array, size);
 
-    if (!node)
-        return (NULL);
+	if (!node)
+		return (NULL);
 
-    return (root);
+	return (root);
 }
 
 /**
@@ -36,52 +36,52 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
  */
 avl_t *insert_node(binary_tree_t *root, int value)
 {
-    binary_tree_t *parent;
-    binary_tree_t *child;
+	binary_tree_t *parent;
+	binary_tree_t *child;
 
-    /* Root case */
-    if (!root->n)
-    {
-        root->n = value;
+	/* Root case */
+	if (!root->n)
+	{
+		root->n = value;
 
-        return (root);
-    }
+		return (root);
+	}
 
-    parent = root;
+	parent = root;
 
-    child = malloc(sizeof(binary_tree_t));
+	child = malloc(sizeof(binary_tree_t));
 
-    if (!child)
-        return NULL;
+	if (!child)
+		return (NULL);
 
-    child->n = value;
+	child->n = value;
 
-    /* Find position of parent to insert value for the child */
-    while ((value < parent->n && parent->left) || (value > parent->n && parent->right))
-    {
-        if (value < parent->n)
-        {
-            parent = parent->left;
-        }
-        else
-        {
-            parent = parent->right;
-        }
-    }
+	/* Find position of parent to insert value for the child */
+	while ((value < parent->n && parent->left) || (value > parent->n && parent->right))
+	{
+		if (value < parent->n)
+		{
+			parent = parent->left;
+		}
+		else
+		{
+			parent = parent->right;
+		}
+	}
 
-    child->parent = parent;
+	child->parent = parent;
 
-    /* Insert new node */
-    if (value < parent->n)
-    {
-        parent->left = child;
-    }
-    else
-    {
-        parent->right = child;
-    }
+	/* Insert new node */
+	if (value < parent->n)
+	{
+		parent->left = child;
+	}
+	else
+	{
+		parent->right = child;
+	}
 
-    return (child);
+	return (child);
 }
 
 /**
@@ -94,46 +94,46 @@ avl_t *insert_node(binary_tree_t *root, int value)
  */
 avl_t *split_insert(binary_tree_t *root, int *array, size_t size)
 {
-    avl_t *node, *verification;
-    int size_right = (size - 1) / 2;
-    int size_left = (size - 1) - size_right;
-    int center_value;
+	avl_t *node, *verification;
+	int size_right = (size - 1) / 2;
+	int size_left = (size - 1) - size_right;
+	int center_value;
 
-    if (!size)
-        return (root);
+	if (!size)
+		return (root);
 
-    if (size == 1)
-    {
-        node = insert_node(root, array[0]);
+	if (size == 1)
+	{
+		node = insert_node(root, array[0]);
 
-        if (!node)
-            return (NULL);
+		if (!node)
+			return (NULL);
 
-        return (root);
-    }
+		return (root);
+	}
 
-    center_value = array[size_left];
+	center_value = array[size_left];
 
-    node = insert_node(root, center_value);
+	node = insert_node(root, center_value);
 
-    if (!node)
-        return (NULL);
+	if (!node)
+		return (NULL);
 
-    if (size_left)
-    {
-        verification = split_insert(root, array, size_left);
+	if (size_left)
+	{
+		verification = split_insert(root, array, size_left);
 
-        if (!verification)
-            return (NULL);
-    }
+		if (!verification)
+			return (NULL);
+	}
 
-    if (size_right)
-    {
-        verification = split_insert(root, &array[size_left + 1], size_right);
+	if (size_right)
+	{
+		verification = split_insert(root, &array[size_left + 1], size_right);
 
-        if (!verification)
-            return (NULL);
-    }
+		if (!verification)
+			return (NULL);
+	}
 
-    return (root);
+	return (root);
 }
