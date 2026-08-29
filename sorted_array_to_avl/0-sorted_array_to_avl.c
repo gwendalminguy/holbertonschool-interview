@@ -14,6 +14,9 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 	binary_tree_t *root;
 	binary_tree_t *node;
 
+	if (!array)
+		return (NULL);
+
 	root = malloc(sizeof(binary_tree_t));
 
 	if (!root)
