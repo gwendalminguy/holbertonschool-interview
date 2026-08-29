@@ -27,3 +27,7 @@ This repository focuses on algorithms implementation for technical interview tra
 * [Menger Sponge](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/menger), an algorithm to print a [Menger Sponge](https://en.wikipedia.org/wiki/Menger_sponge) of a given level, in C.
 
 * [N Queens](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/nqueens), an algorithm to find all solutions for the [N Queens](https://en.wikipedia.org/wiki/Eight_queens_puzzle) problem, in Python.
+
+* [Sorted Array To AVL Tree](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/sorted_array_to_avl), an algorithm to build an [AVL Tree](https://en.wikipedia.org/wiki/AVL_tree) from a sorted array of integers, in C.
+
+* [Skip List Search](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/linear_skip), an algorithm to search for a value in a [Skip List](https://en.wikipedia.org/wiki/Skip_list), in C.
