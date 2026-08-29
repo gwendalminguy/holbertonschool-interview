@@ -94,13 +94,10 @@ avl_t *insert_node(binary_tree_t *root, int value)
  */
 avl_t *split_insert(binary_tree_t *root, int *array, size_t size)
 {
-    avl_t *node, *left, *right;
+    avl_t *node, *verification;
     int size_right = (size - 1) / 2;
     int size_left = (size - 1) - size_right;
-
-    int array_left[size_left];
-    int array_right[size_right];
-    int i, center;
+    int center_value;
 
     if (!size)
         return (root);
@@ -108,37 +105,33 @@ avl_t *split_insert(binary_tree_t *root, int *array, size_t size)
     if (size == 1)
     {
         node = insert_node(root, array[0]);
+
+        if (!node)
+            return (NULL);
+
         return (root);
     }
 
-    center = array[size_left];
+    center_value = array[size_left];
 
-    /* Build left and right arrays */
-    for (i = 0 ; i < size_left ; i++)
-    {
-        array_left[i] = array[i];
-        if (i < size_right)
-            array_right[i] = array[size_left + i + 1];
-    }
-
-    node = insert_node(root, center);
+    node = insert_node(root, center_value);
 
     if (!node)
         return (NULL);
 
     if (size_left)
     {
-        left = split_insert(root, array_left, size_left);
+        verification = split_insert(root, array, size_left);
 
-        if (!left)
+        if (!verification)
             return (NULL);
     }
 
     if (size_right)
     {
-        right = split_insert(root, array_right, size_right);
+        verification = split_insert(root, &array[size_left + 1], size_right);
 
-        if (!right)
+        if (!verification)
             return (NULL);
     }
 
