@@ -1,6 +1,6 @@
 ## Menger Sponge
 
-This project is about working on [Menger Sponge](https://en.wikipedia.org/wiki/Menger_sponge) algorithm.
+This project is about working on a [Menger Sponge](https://en.wikipedia.org/wiki/Menger_sponge) algorithm.
 
 * [menger.h](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/menger/menger.h), the header file containing all prototypes.
 

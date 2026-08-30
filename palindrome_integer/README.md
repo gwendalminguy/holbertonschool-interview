@@ -1,6 +1,6 @@
 ## Palindrome Integer
 
-This project is about working on palindromes.
+This project is about working on [Palindromic Numbers](https://en.wikipedia.org/wiki/Palindromic_number).
 
 * [palindrome.h](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/palindrome_integer/palindrome.h), the header file containing all prototypes.
 

@@ -1,6 +1,6 @@
 ## Linked List Palindrome
 
-This project is about working on a palindrome alogithm.
+This project is about working on a [Palindrome](https://en.wikipedia.org/wiki/Palindrome) alogithm.
 
 * [lists.h](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/linked_list_palindrome/lists.h), the header file containing all prototypes.
 

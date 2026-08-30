@@ -1,6 +1,6 @@
 ## Linear Skip
 
-This project is about working on skip lists.
+This project is about working on [Skip Lists](https://en.wikipedia.org/wiki/Skip_list).
 
 * [search.h](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/linear_skip/search.h), the header file containing all prototypes.
 
