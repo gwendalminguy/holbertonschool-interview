@@ -33,3 +33,5 @@ This repository focuses on algorithms implementation for technical interview tra
 * [Skip List Search](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/linear_skip), an algorithm to search for a value in a [Skip List](https://en.wikipedia.org/wiki/Skip_list), in C.
 
 * [Star Wars API](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/starwars_api), a script to interact with an external API, in JavaScript.
+
+* [Rain](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/rain), an algorithm to determine a quantity of water retention, in Python.
