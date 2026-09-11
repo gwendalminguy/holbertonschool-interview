@@ -3,10 +3,9 @@
 0-rain.py
 Module containing funcitons to determine the quantity of water retention.
 """
-from typing import List
 
 
-def rain(walls: List[int]) -> int:
+def rain(walls: list[int]) -> int:
     """
     Determine the quantity of water retention,
     by turning a list of integers into a matrix,
@@ -28,7 +27,7 @@ def rain(walls: List[int]) -> int:
     return measure_retention(matrix)
 
 
-def to_matrix(walls: List[int]) -> List[List[bool]]:
+def to_matrix(walls: list[int]) -> list[list[bool]]:
     """
     Transform a list of integers into a two-dimensional matrix.
     """
@@ -49,7 +48,7 @@ def to_matrix(walls: List[int]) -> List[List[bool]]:
     return matrix
 
 
-def print_matrix(matrix: List[List[bool]]) -> None:
+def print_matrix(matrix: list[list[bool]]) -> None:
     """
     Print a visual representation of a matrix.
     """
@@ -63,7 +62,7 @@ def print_matrix(matrix: List[List[bool]]) -> None:
         print()
 
 
-def measure_retention(matrix: List[List[bool]]) -> int:
+def measure_retention(matrix: list[list[bool]]) -> int:
     """
     Measure the water retention from a matrix.
     """
