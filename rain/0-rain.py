@@ -11,11 +11,11 @@ def rain(walls: list[int]) -> int:
     by turning a list of integers into a matrix,
     and measuring the final quantity by iteration.
     """
-    if type(walls) != list:
+    if not isinstance(walls, list):
         raise ValueError("Walls must be a list.")
 
     for item in walls:
-        if type(item) != int:
+        if not isinstance(item, int):
             raise ValueError("Walls must be a list of integers.")
 
     if not len(walls):
