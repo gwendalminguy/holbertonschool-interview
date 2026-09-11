@@ -31,3 +31,5 @@ This repository focuses on algorithms implementation for technical interview tra
 * [Sorted Array To AVL Tree](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/sorted_array_to_avl), an algorithm to build an [AVL Tree](https://en.wikipedia.org/wiki/AVL_tree) from a sorted array of integers, in C.
 
 * [Skip List Search](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/linear_skip), an algorithm to search for a value in a [Skip List](https://en.wikipedia.org/wiki/Skip_list), in C.
+
+* [Star Wars API](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/starwars_api), a script to interact with an external API, in JavaScript.
