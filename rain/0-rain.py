@@ -14,70 +14,26 @@ def rain(walls: list[int]) -> int:
     if not isinstance(walls, list):
         raise ValueError("Walls must be a list.")
 
-    for item in walls:
-        if not isinstance(item, int):
+    for value in walls:
+        if not isinstance(value, int):
             raise ValueError("Walls must be a list of integers.")
 
     if not len(walls):
         return 0
 
-    matrix = to_matrix(walls)
-    # print_matrix(matrix)
-
-    return measure_retention(matrix)
-
-
-def to_matrix(walls: list[int]) -> list[list[bool]]:
-    """
-    Transform a list of integers into a two-dimensional matrix.
-    """
-    width = len(walls)
+    total = 0
     height = max(walls)
 
-    matrix = []
-
-    for j in range(height):
-        row = []
-
-        for i in range(width):
-            value = True if walls[i] >= height - j else False
-            row.append(value)
-
-        matrix.append(row)
-
-    return matrix
-
-
-def print_matrix(matrix: list[list[bool]]) -> None:
-    """
-    Print a visual representation of a matrix.
-    """
-    for i in range(len(matrix)):
-        for j in range(len(matrix[i])):
-            if matrix[i][j]:
-                print(" X ", end="")
-            else:
-                print(" . ", end="")
-
-        print()
-
-
-def measure_retention(matrix: list[list[bool]]) -> int:
-    """
-    Measure the water retention from a matrix.
-    """
-    total = 0
-
-    for line in matrix:
+    for level in range(height):
+        count = 0
         inside = False
-        water = 0
 
-        for cell in line:
-            if cell:
-                total += water
-                water = 0
+        for value in walls:
+            if height - level <= value:
+                total += count
+                count = 0
                 inside = True
             elif inside:
-                water += 1
+                count += 1
 
     return total
