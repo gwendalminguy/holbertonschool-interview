@@ -7,9 +7,7 @@ Module containing funcitons to determine the quantity of water retention.
 
 def rain(walls: list[int]) -> int:
     """
-    Determine the quantity of water retention,
-    by turning a list of integers into a matrix,
-    and measuring the final quantity by iteration.
+    Determine the quantity of water retention between walls.
     """
     if not isinstance(walls, list):
         raise ValueError("Walls must be a list.")
