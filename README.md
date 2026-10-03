@@ -35,3 +35,5 @@ This repository focuses on algorithms implementation for technical interview tra
 * [Star Wars API](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/starwars_api), a script to interact with an external API, in JavaScript.
 
 * [Rain](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/rain), an algorithm to determine a quantity of water retention, in Python.
+
+* [Heap Sort](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/heap_sort), a function to sort an array by implementing a [Heap Sort](https://en.wikipedia.org/wiki/Heapsort) algorithm, in C.
