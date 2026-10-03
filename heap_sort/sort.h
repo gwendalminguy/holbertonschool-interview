@@ -1,0 +1,14 @@
+#ifndef _SORT_H_
+#define _SORT_H_
+
+#include <stdio.h>
+#include <stddef.h>
+
+void print_array(const int *array, size_t size);
+
+void heap_sort(int *array, size_t size);
+void heapify(int *array, size_t size);
+void shift_down(int *array, int root, int end, size_t size);
+void swap(int *array, int i, int j);
+
+#endif /* _SORT_H_ */
