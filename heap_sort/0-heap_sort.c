@@ -7,19 +7,19 @@
  */
 void heap_sort(int *array, size_t size)
 {
-    int end = (int)size;
+	int end = (int)size;
 
-    heapify(array, size);
+	heapify(array, size);
 
-    while (end > 1)
-    {
-        end = end - 1;
+	while (end > 1)
+	{
+		end = end - 1;
 
-        swap(array, end, 0);
-        print_array(array, size);
+		swap(array, end, 0);
+		print_array(array, size);
 
-        shift_down(array, 0, end, size);
-    }
+		shift_down(array, 0, end, size);
+	}
 }
 
 /**
@@ -29,14 +29,14 @@ void heap_sort(int *array, size_t size)
  */
 void heapify(int *array, size_t size)
 {
-    int start = ((int)size - 1) / 2 + 1;
+	int start = ((int)size - 1) / 2 + 1;
 
-    while (start > 0)
-    {
-        start = start - 1;
+	while (start > 0)
+	{
+		start = start - 1;
 
-        shift_down(array, start, (int)size, size);
-    }
+		shift_down(array, start, (int)size, size);
+	}
 }
 
 /**
@@ -48,25 +48,25 @@ void heapify(int *array, size_t size)
  */
 void shift_down(int *array, int root, int end, size_t size)
 {
-    int child = 0;
+	int child = 0;
 
-    while (2 * root + 1 < end)
-    {
-        child = 2 * root + 1;
+	while (2 * root + 1 < end)
+	{
+		child = 2 * root + 1;
 
-        if (child + 1 < end && array[child + 1] > array[child])
-            child = child + 1;
+		if (child + 1 < end && array[child + 1] > array[child])
+			child = child + 1;
 
-        if (array[root] < array[child])
-        {
-            swap(array, root, child);
-            print_array(array, size);
+		if (array[root] < array[child])
+		{
+			swap(array, root, child);
+			print_array(array, size);
 
-            root = child;
-        }
-        else
-            break;
-    }
+			root = child;
+		}
+		else
+			break;
+	}
 }
 
 /**
@@ -77,9 +77,9 @@ void shift_down(int *array, int root, int end, size_t size)
  */
 void swap(int *array, int i, int j)
 {
-    int temp;
+	int temp;
 
-    temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
+	temp = array[i];
+	array[i] = array[j];
+	array[j] = temp;
 }
