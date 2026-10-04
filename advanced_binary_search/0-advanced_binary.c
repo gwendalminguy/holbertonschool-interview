@@ -10,53 +10,40 @@
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-	int half = (int)size / 2;
-	int left_index;
-	int index = half;
+	size_t pivot;
+	int index;
 
-	if (!array)
+	if (!array || size == 0)
 		return (-1);
-
-	/* Compensate odd size */
-	if ((int)size % 2 == 1)
-		half++;
-
-	if (value == array[index])
-	{
-		if ((int)size > 1)
-		{
-			print_array(array, size);
-			left_index = advanced_binary(&array[0], (size_t)half, value);
-
-			if (left_index >= 0)
-				return (left_index);
-		}
-
-		return (index);
-	}
-	else if (value < array[index] && (int)size > 1)
-	{
-		print_array(array, size);
-		index = advanced_binary(&array[0], (size_t)half, value);
-
-		if (index >= 0)
-			return (index);
-
-		return (-1);
-	}
-	else if (value > array[index] && (int)size > 1)
-	{
-		print_array(array, size);
-		index = advanced_binary(&array[half], size - (size_t)half, value);
-
-		if (index >= 0)
-			return (half + index);
-
-		return (-1);
-	}
 
 	print_array(array, size);
-	return (-1);
+
+	if (size == 1)
+	{
+		if (array[0] == value)
+			return (0);
+
+		return (-1);
+	}
+
+	pivot = (size - 1) / 2;
+
+	/* Right Half Case */
+	if (value > array[pivot])
+	{
+		index = advanced_binary(array + pivot + 1, size - pivot - 1, value);
+
+		if (index < 0)
+			return (-1);
+
+		return (index + (int)pivot + 1);
+	}
+
+	/* Left Half Case */
+	if (value == array[pivot] && (pivot == 0 || value != array[pivot - 1]))
+		return ((int)pivot);
+
+	return (advanced_binary(array, pivot + 1, value));
 }
 
 /**
