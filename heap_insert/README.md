@@ -1,6 +1,6 @@
 ## Heap Insert
 
-This project is about working with Max [Binary Heaps](https://en.wikipedia.org/wiki/Binary_heap).
+This project is about inserting a node in a Max [Binary Heap](https://en.wikipedia.org/wiki/Binary_heap).
 
 * [binary_trees.h](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/heap_insert/binary_trees.h), the header file containing all prototypes.
 
