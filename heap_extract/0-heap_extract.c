@@ -13,7 +13,6 @@ int heap_extract(heap_t **root)
 	heap_t *current = *root;
 	heap_t *child = NULL;
 
-	printf("\n\n%i\n\n", last->n);
 	/* Swap root node and last node values */
 	swap_values(*root, last);
 
