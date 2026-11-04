@@ -1,10 +1,10 @@
 #include "binary_trees.h"
 
 /**
- * heap_extract - ...
+ * heap_extract - extract the root node of a max binary heap
  * @root: pointer to the root node
  *
- * Return: ...
+ * Return: the value of the extracted node
  */
 int heap_extract(heap_t **root)
 {
@@ -32,10 +32,15 @@ int heap_extract(heap_t **root)
 
 	while (child)
 	{
-		swap_values(current, child);
+		if (current->n < child->n)
+		{
+			swap_values(current, child);
 
-		current = child;
-		child = find_child(current);
+			current = child;
+			child = find_child(current);
+		}
+		else
+			break;
 	}
 
 	return (value);
