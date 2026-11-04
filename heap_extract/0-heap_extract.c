@@ -8,14 +8,16 @@
  */
 int heap_extract(heap_t **root)
 {
-	int value = (*root)->n;
-	heap_t *last = find_last(root);
-	heap_t *current = *root;
+	int value;
+	heap_t *last;
+	heap_t *current;
 	heap_t *child = NULL;
 
-	if (!*root)
+	if (!root || !*root)
 		return (0);
-
+	value = (*root)->n;
+	last = find_last(root);
+	current = *root;
 	if (last == *root)
 	{
 		free(last);
@@ -33,7 +35,6 @@ int heap_extract(heap_t **root)
 			last->parent->right = NULL;
 	}
 	free(last);
-	/* Move new root down */
 	child = find_child(current);
 	while (child)
 	{
@@ -76,7 +77,7 @@ heap_t *find_last(heap_t **root)
 	heap_t *last = NULL;
 	int i = 0, j = 0;
 
-	if (!*root)
+	if (!root || !*root)
 		return (NULL);
 	parents[0] = *root;
 	last = *root;
