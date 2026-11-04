@@ -37,3 +37,5 @@ This repository focuses on algorithms implementation for technical interview tra
 * [Rain](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/rain), an algorithm to determine a quantity of water retention, in Python.
 
 * [Heap Sort](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/heap_sort), an algorithm to sort an array using [Heap Sort](https://en.wikipedia.org/wiki/Heapsort), in C.
+
+* [Heap Extract](https://github.com/gwendalminguy/holbertonschool-interview/tree/main/heap_extract), a function to extract the root node in a Max [Binary Heap](https://en.wikipedia.org/wiki/Binary_heap), in C.
